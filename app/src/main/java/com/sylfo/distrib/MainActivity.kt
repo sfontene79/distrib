@@ -2,9 +2,11 @@ package com.sylfo.distrib
 
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import androidx.databinding.DataBindingUtil
+import com.sylfo.distrib.databinding.ActivityMainBinding
 
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -12,7 +14,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        val viewModel = MainViewModel(applicationContext)
+        val binding : ActivityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        binding.viewmodel = viewModel
         setSupportActionBar(toolbar)
 
         fab.setOnClickListener { view ->
