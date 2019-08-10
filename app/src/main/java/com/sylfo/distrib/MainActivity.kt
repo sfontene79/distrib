@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProviders
 import com.sylfo.distrib.databinding.ActivityMainBinding
 
 import kotlinx.android.synthetic.main.activity_main.*
@@ -14,9 +15,11 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val viewModel = MainViewModel(applicationContext)
+        val viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
         val binding : ActivityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+
         binding.viewmodel = viewModel
+        binding.lifecycleOwner = this
         setSupportActionBar(toolbar)
 
         fab.setOnClickListener { view ->

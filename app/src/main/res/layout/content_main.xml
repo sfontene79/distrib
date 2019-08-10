@@ -15,7 +15,7 @@
                 android:id="@+id/tv_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{viewmodel.text}"
+                android:text="@{String.format(@string/text, viewmodel.count)}"
                 tools:text="@string/text"
                 app:layout_constraintBottom_toTopOf="@id/bt_action"
                 app:layout_constraintLeft_toLeftOf="parent"

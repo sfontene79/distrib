@@ -1,14 +1,19 @@
 package com.sylfo.distrib
 
-import android.content.Context
-import androidx.databinding.ObservableField
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 
-class MainViewModel(val context: Context) {
-    val text = ObservableField<String>(context.getString(R.string.text))
+class MainViewModel : ViewModel() {
+    val count = MutableLiveData<Int>()
+
+    init {
+        count.value = 0
+    }
+
     var nb = 0
 
     fun onClick() {
         nb++
-        text.set(context.getString(R.string.text) + " " + nb)
+        count.value = nb
     }
 }
