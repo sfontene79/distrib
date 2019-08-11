@@ -38,6 +38,14 @@ assembleDebug:
     paths:
       - app/build/outputs/
 
+assembleRelease:
+  stage: build
+  script:
+    - ./gradlew assembleRelease
+  artifacts:
+    paths:
+      - app/build/outputs/
+
 debugTests:
   stage: test
   script:
