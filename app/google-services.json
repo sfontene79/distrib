@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "746148664868",
+    "firebase_url": "https://distrib-a4e46.firebaseio.com",
+    "project_id": "distrib-a4e46",
+    "storage_bucket": "distrib-a4e46.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:746148664868:android:5f6642a9cc45456e",
+        "android_client_info": {
+          "package_name": "com.sylfo.distrib"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "746148664868-q9i91n7qt3m1f5jmdqjsav299lsha483.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4Bg16c77Qhl99EtJ1LoxFC4hQmp1Xokw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "746148664868-q9i91n7qt3m1f5jmdqjsav299lsha483.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
