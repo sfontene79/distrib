@@ -1,19 +1,14 @@
 package com.sylfo.distrib
 
-import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 
-class MainViewModel : ViewModel() {
-    val count = MutableLiveData<Int>()
+class MainViewModel(val repo: FakeRepository) : ViewModel() {
 
-    init {
-        count.value = 0
-    }
-
-    var nb = 0
+    val count: LiveData<Int>
+        get() = repo.counter
 
     fun onClick() {
-        nb++
-        count.value = nb
+        repo.increment()
     }
 }
