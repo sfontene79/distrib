@@ -3,6 +3,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'io.fabric'
 apply plugin: 'com.google.gms.google-services'
+apply plugin: 'firebase.test.lab'
 
 android {
     compileSdkVersion 28
@@ -52,4 +53,15 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit-ktx:1.1.2-alpha02'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+}
+
+firebaseTestLab {
+    keyFile = file("distrib-a4e46-04efa6f5261f.json")
+    googleProjectId = "distrib-a4e46"
+    devices {
+        nexusEmulator {
+            deviceIds = ["Pixel2"]
+            androidApiLevels = [28]
+        }
+    }
 }
