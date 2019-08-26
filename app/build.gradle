@@ -66,7 +66,8 @@ dependencies {
 
 
 firebaseTestLab {
-    keyFile = file("distrib-a4e46-04efa6f5261f.json")
+    def key = System.getenv("TESTLAB_ACCOUNT") ?: 'testlab.json'
+    keyFile = file(key)
     googleProjectId = "distrib-a4e46"
     devices {
         nexusEmulator {
@@ -77,5 +78,6 @@ firebaseTestLab {
 }
 
 play {
-    serviceAccountCredentials = file("Distrib-0f4117fe5e0c.json")
+    def key = System.getenv("PUBLISH_ACCOUNT") ?: 'publish.json'
+    serviceAccountCredentials = file(key)
 }
