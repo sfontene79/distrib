@@ -5,6 +5,7 @@ apply plugin: 'io.fabric'
 apply plugin: 'com.google.gms.google-services'
 apply plugin: 'firebase.test.lab'
 apply plugin: 'io.github.rockerhieu.versionberg'
+apply plugin: 'com.github.triplet.play'
 
 versionberg {
     major 1
@@ -73,4 +74,8 @@ firebaseTestLab {
             androidApiLevels = [28]
         }
     }
+}
+
+play {
+    serviceAccountCredentials = file("Distrib-0f4117fe5e0c.json")
 }
