@@ -1,5 +1,15 @@
 language: android
+
 dist: trusty
+
+addons:
+  sonarcloud:
+    organization: "sfontene79"
+
+before_install:
+  - openssl aes-256-cbc -pbkdf2 -k "$FILES_SECRET" -in app/testlab.json.enc -out app/testlab.json -d
+  - openssl aes-256-cbc -pbkdf2 -k "$FILES_SECRET" -in app/publish.json.enc -out app/publish.json -d
+
 android:
   components:
     # Uncomment the lines below if you want to
@@ -20,8 +30,12 @@ android:
 
     # Specify at least one system image,
     # if you need to run emulator(s) during your tests
-#     - sys-img-x86-android-26
+#    - sys-img-x86-android-26
 #    - sys-img-armeabi-v7a-android-17
+
+script:
+  - "./gradlew clean build firebaseTestLabExecuteDebugInstrumentation"
+  - sonar-scanner
 
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
@@ -32,3 +46,4 @@ cache:
     - $HOME/.gradle/caches/
     - $HOME/.gradle/wrapper/
     - $HOME/.android/build-cache
+
