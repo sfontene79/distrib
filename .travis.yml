@@ -7,8 +7,8 @@ addons:
     organization: "sfontene79"
 
 before_install:
-  - openssl aes-256-cbc -pbkdf2 -k "$FILES_SECRET" -in app/testlab.json.enc -out app/testlab.json -d
-  - openssl aes-256-cbc -pbkdf2 -k "$FILES_SECRET" -in app/publish.json.enc -out app/publish.json -d
+  - openssl aes-256-cbc -k "$FILES_SECRET" -in app/testlab.json.enc -out app/testlab.json -d
+  - openssl aes-256-cbc -k "$FILES_SECRET" -in app/publish.json.enc -out app/publish.json -d
 
 android:
   components:
