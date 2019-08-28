@@ -1,13 +1,11 @@
 language: android
-dist: bionic
+dist: trusty
 addons:
   sonarcloud:
     organization: sfontene79
 before_install:
-- openssl aes-256-cbc -K $encrypted_55bc47e58f16_key -iv $encrypted_55bc47e58f16_iv
-  -in testlab.json.enc -out testlab.json -d
-- openssl aes-256-cbc -K $encrypted_55bc47e58f16_key -iv $encrypted_55bc47e58f16_iv
-  -in publish.json.enc -out publish.json -d
+- openssl aes-256-cbc -K $encrypted_04d671314e78_key -iv $encrypted_04d671314e78_iv -in secrets.tar.enc -out secrets.tar -d
+- tar xvf secrets.tar
 android:
   components:
   - build-tools-28.0.3

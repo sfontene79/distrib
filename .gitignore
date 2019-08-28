@@ -13,3 +13,4 @@
 .externalNativeBuild
 /app/publish.json
 /app/testlab.json
+/secrets.tar
